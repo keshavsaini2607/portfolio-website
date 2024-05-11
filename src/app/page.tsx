@@ -1,13 +1,29 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import avatar from "@/assets/avatar.jpg";
 import Image from "next/image";
 import "./globals.css";
 import { Button } from "@/components/ui/button";
+import AboutSection from "@/components/molecules/AboutSection";
 
 const App = () => {
+   const [tab, setTab] = useState("About");
+
+   const renderTabContent = () => {
+      switch (tab) {
+         case "About":
+            return <AboutSection />;
+
+         default:
+            return <h1>Invalid Option</h1>;
+      }
+   };
    return (
-      <div className="h-[100vh] w-full relative gradient_background">
-         <div className="w-[25vw] h-[78vh] absolute top-36 left-[5%] rounded-lg shadow-md bg-white">
+      <div className="h-[100vh] w-full relative gradient_background overflow-hidden">
+         <div
+            id="sidebar"
+            className="w-[25vw] h-[78vh] absolute top-36 left-[5%] rounded-lg shadow-md bg-white"
+         >
             <div className="relative w-full h-full">
                <Image
                   src={avatar}
@@ -161,26 +177,33 @@ const App = () => {
                </div>
             </div>
          </div>
-         <div className="w-[60vw] p-4 absolute left-[35%] top-[10%] overflow-scroll">
-            <div className="w-full flex justify-end">
-               <div className="flex gap-3 w-max bg-white p-4 rounded-lg">
-                  <div className="router_link">
-                     <span>About</span>
-                  </div>
-                  <div className="router_link">
-                     <span>Experience</span>
-                  </div>
-                  <div className="router_link">
-                     <span>Works</span>
-                  </div>
-                  <div className="router_link">
-                     <span>Contact</span>
+         <div
+            id="rightContent"
+            className="absolute top-0 right-10 p-4 bottom-0 left-[33%] overflow-scroll rounded-lg"
+         >
+            <div className="p-4">
+               <div className="w-full flex justify-end">
+                  <div className="flex gap-3 w-max bg-white p-4 rounded-lg">
+                     <div className="router_link">
+                        <span>About</span>
+                     </div>
+                     <div className="router_link">
+                        <span>Experience</span>
+                     </div>
+                     <div className="router_link">
+                        <span>Works</span>
+                     </div>
+                     <div className="router_link">
+                        <span>Contact</span>
+                     </div>
                   </div>
                </div>
+               {/* content page */}
             </div>
-            {/* content page */}
+            <div className="p-4 bg-white rounded-lg">
+               {renderTabContent()}
+            </div>
          </div>
-         <div className="w-[60vw] p-4 absolute left-[35%] top-[35%] overflow-scroll bg-slate-100 rounded-lg"></div>
       </div>
    );
 };
