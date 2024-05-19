@@ -1,4 +1,5 @@
 import React from "react";
+import { FaGlobe, FaMobileAlt } from "react-icons/fa";
 
 const AboutSection = () => {
    return (
@@ -23,10 +24,41 @@ const AboutSection = () => {
             forward-thinking organization poised for growth and excellence in
             the digital landscape.
          </p>
-         <h1 className="text-2xl font-semibold mt-5">What i do</h1>
+         <h1 className="text-2xl font-semibold mt-5 mb-4">What i do</h1>
          <div className="flex justify-between gap-5">
-            <div className="w-[30vw] h-[30vw] bg-red-100"></div>
-            <div className="w-[30vw] h-[30vw] bg-blue-100"></div>
+            <div className="w-[30vw] h-[20vw] bg-red-100 flex gap-5 p-5 rounded-lg bg-opacity-[50%] bg-gradient-to-r from-red-100 via-red-200 to-red-100">
+               <div className="w-[10%]">
+                  <FaGlobe color="#5927AA" size={40} />
+               </div>
+               <div className="flex flex-col gap-2">
+                  <span className="text-lg font-semibold">Web Development</span>
+                  <span>
+                     I am a full stack web developer with comprehensive
+                     expertise in both front-end and back-end development. I
+                     specialize in crafting responsive, user-friendly web
+                     applications utilizing cutting-edge web technologies.
+                  </span>
+               </div>
+            </div>
+
+            <div className="w-[30vw] h-[20vw] bg-blue-100 flex gap-5 p-5 rounded-lg bg-opacity-[30%] bg-gradient-to-r from-blue-100 via-blue-200 to-blue-100">
+               <div>
+                  <FaMobileAlt color="#5927AA" size={40} />
+               </div>
+               <div className="flex flex-col gap-2">
+                  <span className="text-lg font-semibold">
+                     Mobile App Development
+                  </span>
+                  <span>
+                     I specialize in creating hybrid mobile applications that
+                     are compatible with both iOS and Android platforms. My
+                     approach integrates responsive design techniques with the
+                     latest cross-platform frameworks to ensure seamless
+                     functionality and optimal user experience across all
+                     devices.
+                  </span>
+               </div>
+            </div>
          </div>
       </div>
    );
