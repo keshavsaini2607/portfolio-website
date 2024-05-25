@@ -4,7 +4,10 @@ import React from "react";
 const ResumeSection = () => {
    return (
       <div className="p-6">
-         <h1 className="text-5xl font-semibold">Resume</h1>
+         <div className="flex items-center gap-2">
+            <h1 className="text-5xl font-semibold">Resume</h1>
+            <div className="w-[40%] h-[5px] bg-blue-300"></div>
+         </div>
          <div className="w-full flex gap-5 mt-6 items-start">
             <div className="w-[50%] flex flex-col gap-4">
                <h2 className="text-xl font-semibold mb-1">Education</h2>

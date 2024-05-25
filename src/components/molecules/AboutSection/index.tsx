@@ -4,7 +4,10 @@ import { FaGlobe, FaMobileAlt } from "react-icons/fa";
 const AboutSection = () => {
    return (
       <div className="p-6">
-         <h1 className="text-5xl font-semibold">About</h1>
+         <div className="flex items-center gap-2">
+            <h1 className="text-5xl font-semibold">About</h1>
+            <div className="w-[40%] h-[5px] bg-blue-300"></div>
+         </div>
          <p className="mt-2 text-sm text-gray-500 text-justify">
             Dynamic and results-driven Full Stack Developer with over 3 years of
             hands-on experience in building robust web applications using the

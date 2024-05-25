@@ -88,7 +88,10 @@ const ContactSection = () => {
 
    return (
       <div className="p-6">
-         <h1 className="text-5xl font-semibold">Contact</h1>
+         <div className="flex items-center gap-2">
+            <h1 className="text-5xl font-semibold">Contact</h1>
+            <div className="w-[40%] h-[5px] bg-blue-300"></div>
+         </div>
          <div className="p-12">
             <p className="text-2xl">
                I am always open to discussing new projects
@@ -179,9 +182,6 @@ const ContactSection = () => {
                </FormProvider>
             </div>
          </div>
-         <ToastProvider>
-            <Toast />
-         </ToastProvider>
       </div>
    );
 };
